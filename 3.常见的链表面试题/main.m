@@ -16,9 +16,27 @@
 typedef struct ListNode ListNode;
 
 void AddToTail(ListNode **pHead,int value);
+ListNode * reverse_it(ListNode *pHead);
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
+        ListNode *linkNodes = malloc(sizeof(ListNode));
+        ListNode *newNodes = malloc(sizeof(ListNode));
+        linkNodes->m_nValue = 12;
+        linkNodes->m_pNext = newNodes;
+        newNodes->m_nValue = 18;
+        newNodes->m_pNext = NULL;
+        
+        ListNode *reverNode = reverse_it(linkNodes);
+        ListNode *temp = reverNode;
+        printf("value= %d->",temp->m_nValue);
+        while (temp->m_pNext !=NULL) {
+            temp = temp->m_pNext;
+            printf("value= %d->",temp->m_nValue);
+        }
+        printf("\n");
+        
+        
         
     }
     return 0;
@@ -95,7 +113,30 @@ void RemoveNode(ListNode **pHead,int value)
         free(pTobeDeleted);
         pTobeDeleted = NULL;
     }
-        
-    
-  
 }
+
+//3翻转链表
+
+ListNode * reverse_it(ListNode *pHead)
+{
+    ListNode *newHeadNode = NULL;
+    ListNode *pre =  NULL;
+    ListNode *pCur = pHead;
+    
+    while (pCur != NULL) {
+        
+        ListNode *pTemp = pCur->m_pNext;
+        if (pTemp == NULL) {
+            newHeadNode = pCur;
+        }
+        
+        pCur->m_pNext = pre;
+        pre = pCur;
+        pCur = pTemp;
+    }
+    
+    return newHeadNode;
+    
+}
+
+

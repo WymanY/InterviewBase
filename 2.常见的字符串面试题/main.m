@@ -20,14 +20,16 @@ char *maxCommonSubStr(char *shortStr,char *longStr);
 int isRevesedStr(char *str);
 int continumax(char *outputstr,char *intputstr);
 char * search(char *cpSource,char ch);
+char * reverseSentence(char * pData);
 
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        char *cpSource = "hellowwwwddduuu";
-        char ch = 'u';
-        char *dest =   search(cpSource, ch);
-        printf("ch = %c dest = %s\n",ch,dest);
+        char senctece[]  = "i love you";
+        printf("senctece = %s\n",senctece);
+        char *newSentect = reverseSentence(senctece);
+        printf("newSentect = %s",newSentect);
+        printf("\n");
     }
     return 0;
 }
@@ -359,6 +361,10 @@ int continumax(char *outputstr,char *intputstr)
 }
 
 //11) 编写一个 C 函数，该函数在一个字符串中找到可能的最长的子字符串，且该字符串是由同一字符组成的。
+// char *cpSource = "hellowwwwddduuu";
+//char ch = 'u';
+//char *dest =   search(cpSource, ch);
+//printf("ch = %c dest = %s\n",ch,dest);
 char * search(char *cpSource,char ch)
 {
     char *cpTemp=NULL, *cpDest = NULL;
@@ -386,6 +392,78 @@ char * search(char *cpSource,char ch)
     
     return outStr;
 }
+
+//给一个句子，翻转其中的每一个单词
+void Reverse(char* pb , char* pe)    //将某一段字符串翻转过来
+{
+//    char *pl = pb;
+//    char *pr = pe;
+//    char ch;
+//    while (pl < pr) {
+//        ch = *pl;
+//        *pl++ = *pr;
+//        *pr-- = ch;
+//    }
+    
+    char *pl = pb;
+    char *pr = pe;
+    char ch;
+    while (pl < pr) {
+        ch = *pl;
+        *pl++= *pr;
+        *pr--= ch;
+    }
+    
+}
+
+char * reverseSentence(char * pData)
+{
+//    if (pData == NULL) {
+//        return NULL;
+//    }
+//    
+//    char *pBegin = pData;
+//    char *pEnd = pData;
+//    while (*pEnd  != '\0') pEnd++;
+//    pEnd--;
+//    Reverse(pBegin, pEnd);
+//    
+//    pBegin = pEnd = pData;
+//    while (*pEnd != '\0' && pEnd) {
+//        while (*pEnd != ' ' &&*pEnd !='\0') pEnd++;
+//        pEnd--;
+//        Reverse(pBegin, pEnd);
+//        ++pEnd;
+//        while (*pEnd ==' ' && *pEnd !='\0') pEnd++;
+//        pBegin = pEnd;
+//    }
+//    
+//    return pData;
+    
+    if (pData == NULL) {
+        return NULL;
+    }
+    
+    char *pBegin = pData;
+    char *pEnd = pData;
+    while (*pEnd != '\0') pEnd++;
+    pEnd--;
+    Reverse(pBegin, pEnd);
+    pBegin = pEnd = pData;
+    while (*pEnd != '\0') {
+        while (*pEnd != ' '&& *pEnd !='\0')pEnd++;
+        pEnd--;
+        Reverse(pBegin, pEnd);
+        ++pEnd;
+        while (*pEnd ==' '&& *pEnd !='\0')pEnd++;
+        pBegin = pEnd;
+    }
+    return pData;
+    
+
+}
+
+
 
 
 
