@@ -4,7 +4,22 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>AlgorithmDemo.xcscheme</key>
+		<key>2.常见的字符串面试题.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>3.常见的链表面试题.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>单例的正确写法.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
+		<key>常见的排序算法.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,7 +27,42 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>C504A1081D1001B40072A8E7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C5847E1A1CFF22D700F99F5C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>C5B0C46B1CFBEF82003D58EA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C5B6DD941D17DBA100FD01AF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C5B6DD9F1D17DF1D00FD01AF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C5B6DDAA1D17DF3400FD01AF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C5B6DDB51D17DFBE00FD01AF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C5B6DDC01D181E2900FD01AF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
